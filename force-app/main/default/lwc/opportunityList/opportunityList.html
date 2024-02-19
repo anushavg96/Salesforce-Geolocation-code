@@ -1,0 +1,23 @@
+<template>
+    <lightning-card  variant="Narrow"  title="List of Opportunities" style="color:#495159" icon-name="utility:opportunity">
+        <div style="height: 500px;">
+            <template lwc:if={oppList}>
+                <lightning-datatable
+                key-field="id"
+                data={oppList}
+                show-row-number-column
+                row-number-offset={rowOffset}
+                suppress-bottom-bar
+                default-sort-direction={defaultSortDirection}
+                sorted-direction={sortDirection}
+                sorted-by={sortedBy}
+                onsort={onHandleSort}
+                columns={columns}>
+        </lightning-datatable>
+            </template>
+            <template lwc:else>
+                {error}
+            </template> 
+        </div>
+    </lightning-card>
+</template>
